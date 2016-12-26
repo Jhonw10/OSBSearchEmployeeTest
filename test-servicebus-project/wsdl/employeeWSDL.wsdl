@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions targetNamespace="urn:employeeWSDL" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="urn:employeeWSDL"
+             xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+             xmlns:emp="http://www.local.com.co/employee"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  asd
+  <types>
+    <xsd:schema targetNamespace="urn:employeeWSDL/types" elementFormDefault="qualified">
+      <xsd:import schemaLocation="../xsd/employee.xsd" namespace="http://www.local.com.co/employee" id="empxsd"/>
+    </xsd:schema>
+  </types>
+  <message name="searchEmployeeMessage">
+    <part name="in" element="emp:searchEmployee"/>
+  </message>
+  <message name="searchEmployeeResponseMessage">
+    <part name="return" element="emp:searchEmployeeRes"/>
+  </message>
+  <portType name="WSDLDocumentPortType">
+    <operation name="searchEmployee">
+      <input message="tns:searchEmployeeMessage"/>
+      <output message="tns:searchEmployeeResponseMessage"/>
+    </operation>
+  </portType>
+  <binding name="WSDLDocumentPortTypeSOAP11Binding" type="tns:WSDLDocumentPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="searchEmployee">
+      <soap:operation style="document" soapAction="urn:employeeWSDL/searchEmployee"/>
+      <input>
+        <soap:body use="literal" parts="in"/>
+      </input>
+      <output>
+        <soap:body use="literal" parts="return"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="EmployeeService">
+    <port name="EmployeeServicePortType" binding="tns:WSDLDocumentPortTypeSOAP11Binding">
+      <soap:address location="http://www.example.com"/>
+    </port>
+  </service>
+</definitions>

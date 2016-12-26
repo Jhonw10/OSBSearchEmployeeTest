@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:emp="http://www.local.com.co/employee"
+            targetNamespace="http://www.local.com.co/employee" elementFormDefault="qualified">
+  <xsd:element name="searchEmployee">
+    <xsd:annotation>
+      <xsd:documentation>A sample element</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="id" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="searchEmployeeRes">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="id" type="xsd:string"/>
+        <xsd:element name="name" type="xsd:string"/>
+        <xsd:element name="lastName" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
