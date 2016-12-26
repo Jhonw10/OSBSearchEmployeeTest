@@ -3,7 +3,6 @@
              xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
              xmlns:emp="http://www.local.com.co/employee"
              xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
-  asd
   <types>
     <xsd:schema targetNamespace="urn:employeeWSDL/types" elementFormDefault="qualified">
       <xsd:import schemaLocation="../xsd/employee.xsd" namespace="http://www.local.com.co/employee" id="empxsd"/>
